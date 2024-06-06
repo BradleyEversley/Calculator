@@ -29,29 +29,51 @@ body {
 .case-container {
     background-color: #00000024;
     border-radius: 10px;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
     height: 520px;
     width: 350px;
     color: white;
     border-radius: 35px;
-    box-shadow: 9px 14px 7px rgba(0, 0, 0, 0.648);
+    box-shadow: 12px 14px 7px rgba(0, 0, 0, 0.446);
 }
 
 .calc-display {
     border: 1px solid rgb(0, 255, 21);
     margin: 10px auto;
     height: 100px;
-    border-radius: 25px;
-    box-shadow: inset 5px 5px 8px rgb(0, 0, 0);
+    border-radius: 35px;
+    box-shadow: inset 5px 9px 12px rgb(0, 0, 0);
     background-color: rgb(51, 51, 51);
+}
+
+.input{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 25px;
+    margin-top: 15px;
+    font-size: 25px;
+    font-family: "Anton", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: rgb(16, 209, 16);
+}
+
+.result {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 25px;
+    margin-bottom: 5px;
+    font-size: 35px;
+    font-weight: 900;
 }
 
 .calc-buttons {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     margin: 10px auto;
-    height: 330px;
+    height: 360px;
     border-radius: 25px; 
 }
 
@@ -60,10 +82,15 @@ button {
     border-radius: 50%;
     height: 65px;
     width: 70px;
-    margin: 2px;
+    margin-top: 5px;
     border: none;
-    background-color: #ffffffaa;
+    background-color: #ffffffc4;
     box-shadow: 3px 3px 3px rgb(0, 0, 0);
+    font-family: "Anton", sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    font-style: normal;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.035);
 }
 
 .number:hover, .operator:hover, .equal:hover,
@@ -72,9 +99,13 @@ background: radial-gradient(circle, rgba(0, 255, 0, 0.862) 0%, rgb(0, 248, 1) 10
 transform: scale(1.1);
 }
 
+.all-clear {
+    width: 140px;
+    border-radius: 30px;
+}
 
 .equal {
-    width: 150px;
+    width: 140px;
     border-radius: 30px;
 }
 
@@ -91,8 +122,9 @@ h1 {
     color: rgb(0, 255, 0);
     font-family: "Anton", sans-serif;
     font-weight: 200;
-     font-style: normal;
-     text-shadow: 6px 4px 5px black;
+    font-size: 30px;
+    font-style: normal;
+    text-shadow: 6px 4px 5px black;
 }
 
 img {
