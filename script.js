@@ -1,19 +1,27 @@
+// GLOBAL VARIABLES
+/* #region Main */
 let operator = '';
 let inputValue = '';
 let resultValue = '';
+/* #endregion */
 
 // STORE HTML COMPONENTS
+/* #region Main */
 let input = document.querySelector('.input');
 let result = document.querySelector('.result');
+/* #endregion */
 
 // Buttons
+/* #region Main */
 let allClear = document.querySelector('.all-clear');
 let operators = document.querySelectorAll('.operator');
 let numbers = document.querySelectorAll('.number');
 let decimal = document.querySelector('.decimal');
 let equalSign = document.querySelector('.equal');
+/* #endregion */
 
 // EVENT LISTENERS
+/* #region Main */
 allClear.addEventListener("click", function() {
     inputValue = '';
     resultValue = '';
@@ -33,8 +41,10 @@ operators.forEach(op => op.addEventListener("click", function(e) {
 equalSign.addEventListener("click", function() {
     compute();
 });
+/* #endregion */
 
 // FUNCTIONS
+/* #region Main */
 function numberAction(num) {
     if (inputValue.length <= 20) {
         inputValue += num;
@@ -96,7 +106,7 @@ function computePercentage() {
         // Ensure the number is valid
         if (!isNaN(number)) {
             // Compute the percentage
-            resultValue = (number / 100).toFixed(5);
+            resultValue = parseFloat((number / 100).toFixed(5));
 
             // Update both input and result to show the percentage calculation result
             inputValue = resultValue.toString();
@@ -105,3 +115,4 @@ function computePercentage() {
         }
     }
 }
+/* #endregion */
