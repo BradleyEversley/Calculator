@@ -34,6 +34,10 @@ numbers.forEach(number => number.addEventListener("click", function(e) {
     numberAction(e.target.textContent);
 }));
 
+decimal.addEventListener("click", function(e) {
+    numberAction(e.target.textContent);
+});
+
 operators.forEach(op => op.addEventListener("click", function(e) {
     operatorAction(e.target.textContent);
 }));
@@ -47,10 +51,34 @@ equalSign.addEventListener("click", function() {
 /* #region Main */
 function numberAction(num) {
     if (inputValue.length <= 20) {
-        inputValue += num;
+        // Split inputValue by space to get the parts before and after the operator
+        let parts = inputValue.split(' ');
+
+        // Check if we are adding a number to the second operand
+        if (parts.length === 3) {
+            if (num === '.') {
+                // Prevent multiple decimal points in the second operand
+                if (!parts[2].includes('.')) {
+                    parts[2] += num;
+                }
+            } else {
+                parts[2] += num;
+            }
+            inputValue = parts.join(' ');
+        } else {
+            if (num === '.') {
+                // Prevent multiple decimal points in the first operand
+                if (!inputValue.includes('.')) {
+                    inputValue += num;
+                }
+            } else {
+                inputValue += num;
+            }
+        }
     }
     input.textContent = inputValue;
 }
+
 
 function operatorAction(op) {
     if (op === '%') {
@@ -95,6 +123,8 @@ function compute() {
 
     // Only update the result display, keep input unchanged to show full expression
     result.textContent = resultValue.toString();
+    inputValue = resultValue.toString();
+    operator = '';
 }
 
 function computePercentage() {
