@@ -105,8 +105,7 @@ function compute() {
 
     // Perform the computation based on the operator
     switch (operator) {
-        case '+':
-            resultValue = firstOperand + secondOperand;
+        case '+': resultValue = firstOperand + secondOperand;
             break;
         case '-':
             resultValue = firstOperand - secondOperand;
